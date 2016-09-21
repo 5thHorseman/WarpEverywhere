@@ -8,7 +8,7 @@ using UnityEngine;
 namespace WarpEverywhere 
 {
 
-    [KSPAddon(KSPAddon.Startup.AllGameScenes, false)] //The "true" at the end means this will only run once, the first time you go into flight.
+    [KSPAddon(KSPAddon.Startup.AllGameScenes, false)] //The "false" at the end means this will run every time you change scenes. KSP seems to reset time warp on every scene change.
     public class WarpEverywhere : MonoBehaviour
     {
         public void Start()
@@ -16,7 +16,7 @@ namespace WarpEverywhere
             // Create a reference to the time warp object.
             TimeWarp timeWarp = (TimeWarp)FindObjectOfType(typeof(TimeWarp));
 
-            if (timeWarp != null) //Only do the rest if there was a timewarp object to modify
+            if (timeWarp != null) //Only do the rest if there is a timewarp object to modify
             {
                 //Resize it, increasing it by 2.
                 Array.Resize(ref timeWarp.warpRates, 10);
@@ -26,7 +26,7 @@ namespace WarpEverywhere
                 timeWarp.warpRates[9] = timeWarp.warpRates[8] * 10;
 
                 //Resize each world's array and set all of its altitude limits to 0. This makes it so you can warp as fast as you want, as low as you want, everywhere.
-                //Well, everywhere you can warp. If you can only pnysics warp, then you're stuck with that. :)
+                //Well, everywhere you can warp. If you can only physics warp, then you're stuck with that. :)
                 foreach (CelestialBody iCelestialBody in FlightGlobals.Bodies)
                 {
                     Array.Resize(ref iCelestialBody.timeWarpAltitudeLimits, timeWarp.warpRates.Length);
