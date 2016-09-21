@@ -15,5 +15,7 @@ This project uses code and ideas from
     - Removal of altitude limits on all worlds.
     
 # TO DO:
-  - Currently this does not work until you load a ship for the first time. So if you load a new game and go right to the tracking station, you'll not be able to reach the 2 new warp limits. If you load a ship, though, you will, even if you then to back to the tracking station.
-  - Trying to modify the time warp settings anywhere else gives me an error, and I've not yet figured out how to get around it.
+  - Nothing! If I find no bugs, this will go to 1.0 and never get touched again except recompiles.
+
+# MIGHT DO:
+  - Add a config so you can set your own warp rates. Doubtful, as that seems to be where Krakens lie. I think it's better to have this mod as a stalwart, simple addition to the game and if you want more control, use one of the other warp configuring mods instead.
